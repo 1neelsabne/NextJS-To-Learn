@@ -1,6 +1,19 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
+import { Button } from "react-bootstrap";
 
-const index = () => {
+const Index = () => {
+	const router = useRouter();
+	const backRedirect = () => {
+		router.push("/");
+	};
+
+	useEffect(() => {
+		setTimeout(() => {
+			router.push("/");
+		}, 3000);
+	}, [router]);
+
 	return (
 		<>
 			<h1>
@@ -9,27 +22,13 @@ const index = () => {
 			<br />
 			<div>
 				<center>
-					<nav>
-						<li>
-							<Link href="/home">
-								<a>Home</a>
-							</Link>
-						</li>
-						<li>
-							<Link href="/blog/Neel">
-								<a>Blog</a>
-							</Link>
-						</li>
-						<li>
-							<Link href="/contact">
-								<a>Contact</a>
-							</Link>
-						</li>
-					</nav>
+					<Button className="m-auto" onClick={() => backRedirect()}>
+						Press to Back Home Page
+					</Button>
 				</center>
 			</div>
 		</>
 	);
 };
 
-export default index;
+export default Index;
