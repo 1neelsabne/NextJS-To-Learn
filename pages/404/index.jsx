@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
+import styles from "../../styles/error.module.css";
 
 const Index = () => {
 	const router = useRouter();
@@ -16,7 +17,7 @@ const Index = () => {
 
 	return (
 		<>
-			<h1>
+			<h1 className={styles.headings}>
 				<center>404 Page Not Found!!</center>
 			</h1>
 			<br />
